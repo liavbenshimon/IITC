@@ -22,8 +22,8 @@ console.log(firstName);
 function greet (firstName, LastName) 
 { let fullName = firstName + " " + LastName;
     fullName = fullName.toUpperCase();
-console.log ("Hello "+fullName+" Welcome to IITC Bootcamp");}
-greet (firstName,LastName)
+return ("Hello "+fullName+" Welcome to IITC Bootcamp");}
+console.log (greet("liav","ben shimon"));
 
 /////conditions - If and else////
 
@@ -33,7 +33,7 @@ function checkAge(age) {
     else if (18 > age <= 64){console.log("You are an adult");}
     else console.log("You are old")
    }
-   checkAge(13);
+   console.log(checkAge(13));
    
 //// switch satatement:
 function getDayMessage (dayOfWeek) {

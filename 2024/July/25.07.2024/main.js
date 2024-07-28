@@ -1,28 +1,65 @@
-//1) == and ===
-//2) == (Equality Operator):
+// 1)Three Main Logical Operators in JavaScript:
 
-// Performs type coercion (converts operands to the same type before comparison).
-// Loosely checks equality.
-// Example: 5 == '5' is true.
-// === (Strict Equality Operator):
+// AND (&&)
+// OR (||)
+// NOT (!)
+//2) What does the AND (&&) operator do?
 
-// Does not perform type coercion.
-// Strictly checks equality (both value and type must be the same).
-// Example: 5 === '5' is false.
-// 3)!= (Loose Inequality Operator):
+// It returns true only if both operands are true.
+//3) What is the result of true && true?
 
-// Performs type coercion.
-// Example: 5 != '5' is false.
-// !== (Strict Inequality Operator):
+// true
+//4) What is the result of true && false?
 
-// Does not perform type coercion.
-// Example: 5 !== '5' is true.
-//4) The > operator in JavaScript is a comparison operator
-//  that checks if the value on the left side is greater than the value on the right side.
-//  It returns a Boolean value: true if the left value is greater than the right value, and false otherwise.
-// 5)the ooposite 
-// 12) In JavaScript, when you compare strings using relational operators like <, the comparison is done lexicographically, based on the Unicode values of the characters in the strings.
-// 15)Relational Operators: Convert strings to numbers if compared with numbers; convert booleans to 0 or 1.
-// Loose Equality (==, !=): Performs type coercion to compare values.
-// Strict Equality (===, !==): No type coercion; compares both value and type.
-// Special Cases: null and undefined are equal to each other but not to other values; NaN is not equal to anything, even itself.
+// false
+//5)What does the OR (||) operator do?
+
+// It returns true if at least one operand is true.
+//6) What is the result of false || true?
+
+// true
+//7) What is the result of false || false?
+
+// false
+//8) What does the NOT (!) operator do?
+
+// It inverts the boolean value of its operand.
+//9) What is the result of !true?
+
+// false
+//10) What is the result of !false?
+
+// true
+//11) What is the result of true && true && false?
+
+// false (because all operands must be true for the result to be true with the AND operator)
+//12) What is the result of false || false || true?
+
+// true (because at least one operand is true with the OR operator)
+//13) What is the order of precedence for logical operators?
+
+// NOT (!) has the highest precedence.
+// AND (&&) is next.
+// OR (||) has the lowest precedence.
+//14) What is short-circuit evaluation in logical operations?
+
+// It's when the second operand is not evaluated if the first operand is sufficient to determine the result.
+//15) In the expression a && b, when is b not evaluated?
+
+// When a is false, because the result is already determined to be false.
+//16) In the expression a || b, when is b not evaluated?
+
+// When a is true, because the result is already determined to be true.
+// Evaluating Expressions
+//17) What is the result of 5 > 3 && 2 < 4?
+
+// true (both comparisons are true, and true && true is true)
+//18) What is the result of 5 > 7 || 3 < 2?
+
+// false (both comparisons are false, and false || false is false)
+//19) What is the result of !(5 > 3)?
+
+// false (the comparison 5 > 3 is true, and !true is false)
+//20) How can you use parentheses to change the order of evaluation in logical expressions?
+
+// Expressions within parentheses are evaluated first.
