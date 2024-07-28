@@ -26,7 +26,7 @@
 // It inverts the boolean value of its operand.
 //9) What is the result of !true?
 
-// false
+/// false
 //10) What is the result of !false?
 
 // true
