@@ -393,9 +393,33 @@ console.log(seasonn);
 
 // 26)
 
-let X;
-let Y; 
+let X = -4;
+let Y = 5;
+let quadrnat;
 
-if (X = 1) { 
+if (X > 0 ) { 
+if (Y > 0) {
+    quadrnat = "1";
+} else if (Y < 0) {
+    quadrnat = "4";
+} else quadrnat = "X on axis";
+} else if (X < 0) {
+    if (Y < 0) {
+        quadrnat = "3";
+     } else if (Y > 0) {
+            quadrnat = "2";
+        }else quadrnat = "X on axis"
+        
+    }else { // x is 0
+        if (y > 0) {
+            position = "On Y-axis"; // x is 0, y is positive
+        } else if (y < 0) {
+            position = "On Y-axis"; // x is 0, y is negative
+        } else {
+            position = "Origin"; // x and y are both 0
+        }
+    }
     
-}
+console.log(quadrnat)
+
+// 27)
