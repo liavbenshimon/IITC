@@ -34,4 +34,4 @@ console.log(food);
 for ( let i = 0 ; i>=0 ; i++){
     i=food
 }
-console.log(f;
+console.log(f);

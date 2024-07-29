@@ -299,5 +299,57 @@ if (nestednumber % 2 === 0) {
          parity = "Neither even nor odd";
 }
 console.log(`Sign: ${sign1}` + " , " + parity);
-//
+//22)
 
+let score123 = 90;
+let attendance = 75;
+let grade123;
+
+if (score123 >= 90 ) {
+    grade123 = `A`;
+} else if (grade123 >= 80) {
+    grade123 = `B`;
+  }else if (grade123 >= 70) {
+    grade123 = `C`;
+  } else if (grade123 >= 60) {
+    grade123 = `D`;
+  } else grade123 = "F";
+
+  if (attendance < 80) {
+    if (grade123 === `A`) {
+        grade123 = `B`;
+    } else if (grade123 === `B`) {
+        grade123 = `C`;
+    }else if (grade123 ===`C`) {
+        grade123 = `D`;
+    }
+      }
+      console.log(grade123);
+//23)
+
+let isLeapYear = 2024;
+
+if (isLeapYear % 400 === 0) {
+    isLeapYear = true;
+}else if (isLeapYear & 100 === 0) {
+        isLeapYear = true;
+    } else if ( isLeapYear % 4 === 0) {
+        isLeapYear = true;
+    } else isLeapYear = false;
+    console.log(isLeapYear);
+    //24)
+
+    let age2;
+    let isEmployed = true;
+    let category;
+
+    if (age2 < 18 ) {
+        category = "Student";
+    }else if (age2 >= 18 && age2 <= 65 ) {
+     } if (isEmployed){
+        category = "Employed Adult";
+    } else category = "Unemployed Adult";
+    
+else category = "Retire";
+    
+    
