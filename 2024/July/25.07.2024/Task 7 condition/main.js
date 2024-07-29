@@ -1,12 +1,303 @@
 // 1)
 let age = 20; // You can set this to any number to test
-let canVote;
+let canVote = true;
 
 if (age >= 18) {
-    canVote = true;
+  console.log(canVote);
 } else {
     canVote = false;
 }
+console.log();; // This will print true if age is 18 or greater, otherwise false
 
-console.log(canVote); // This will print true if age is 18 or greater, otherwise false
+//2)
+let temerature = 9;
+let weather;
+if (temerature < 0){
+     weather = "freezing";
+    console.log(weather);
+} else {
+     (weather = "notFreezing");
+}
+console.log(weather);
+//3)
+let score = 61;
+let result;
+if (score >= 60){
+     result = "pass";
+} else {
+     (result = "fail");
+}
+console.log(result);
+//4)
+let grade = 90;
+let letterGrade;
+
+if (grade >= 90){
+     letterGrade = "A";
+  
+}    else if (grade >= 80) {
+     letterGrade = "B";
+} else {
+letterGrade = "C"
+}    
+console.log(letterGrade);
+//5)
+let number = 21;
+let isEven = true;
+if ( number%2=== 0 ) isEven;
+else isEven = false;
+console.log(isEven);
+//6)
+let year = 2024;
+let leapYear;
+if (year % 4 === 0) leapYear = true;
+else leapYear =false;
+console.log(leapYear);
+//7)
+let hour = 13;
+let period;
+ if (hour < 12) period = "AM";
+ else period = "PM";
+ console.log(period);
+ //8)
+ let dayNumber = 4;
+ let dayName;
+ if (dayNumber === 1) {
+    dayName = "Sunday";
+ } else if (dayNumber === 2) {
+    dayName = "Monday";
+ } else if (dayNumber === 3) {
+    dayName = "tuseday";
+ } else if (dayNumber === 4) {
+    dayName = "Wednesay";
+ } else if (dayNumber === 5) {
+    dayName = "Thursday";
+ } else if (dayNumber === 6 ){
+    dayName = "Friday";
+} else dayName = "Saturday";
+  console.log(dayName);
+  //9)
+  let namee = "";
+  let hasName;
+  if (namee === "" ) {
+    hasName = false
+  } else true;
+  console.log(hasName);
+  //10)
+let amount = 222;
+let shipping;
+if (amount > 1000) {
+    shipping = 0;
+} else shipping =5;
+console.log(shipping);
+//11)
+let password = "secret123";
+let isLoggedIN;
+if (password === "secret123") {
+    isLoggedIN = true;
+}else isLoggedIN = false;
+console.log(isLoggedIN);
+//12)
+let month = 6;
+let season;
+if (month === 1) {
+    season = "Winter";
+} else if (month === 2) {
+    season = "Winter";
+} else if (month === 3) {
+    season = "Fall";
+} else if (month === 4) {
+    season = "Fall";
+} else if (month === 5) {
+    season = "Fall";
+} else if (month === 6) {
+    season = "Summer";
+} else if (month === 7) {
+    season = "Summer";
+} else if (month === 8) {
+    season = "Summer";
+} else if (month === 9) {
+    season = "Spring";
+} else if (month === 10) {
+    season = "Spring";
+} else if (month === 11) {
+    season = "Spring";
+} else if (month === 12) {
+    season = "Winter";
+}
+console.log(season);
+//13)
+
+let income = 350000;
+let credirScore = 770;
+let loanApproved;
+if (income > 50000 && credirScore > 700) {
+    loanApproved = true;
+}
+console.log(loanApproved);
+//14)
+
+let agee = 23;
+let discount;
+if (agee < 18 && agee > 65) {
+    discount = 0.2;
+} else discount = 0;
+console.log(discount);
+//15)
+
+let newNumber = 9;
+let inRange;
+if (newNumber <= 10) {
+    inRange = true
+} else inRange = false;
+console.log(inRange);
+//16)
+
+let dayNumberr = 5;
+let dayNamee;
+
+switch (dayNumberr) {
+    case 1:
+        dayNamee = "Sunday";
+        break;
+        case 2:
+        dayNamee = "Monday";
+        break;
+        case 3:
+        dayNamee = "Tuesday";
+        break;
+        case 4:
+        dayNamee = "Wednesday";
+        break;
+        case 5:
+        dayNamee = "Thursday";
+        break;
+        case 6:
+        dayNamee = "Friday";
+        break;
+        case 7:
+        dayNamee = "Saturday";
+        break;
+            default:
+                dayNamee = "Invalid day number";
+        break;
+}
+console.log(dayNamee);
+
+//17)
+
+let gradee = "A";
+let description;
+
+switch (gradee){
+case "A":
+description = "Excellent";
+break;
+case "B":
+    description = "Good";
+    break;
+    case "C":
+        description = "Competent";
+        break;
+        case "D":
+            description = "Unsatisfactory"
+            break;
+            case "F":
+                description = "Fails"
+                break;
+                default:
+                    description = "Out of range";
+
+}
+console.log(description);
+//18)
+
+let numeriko = 5;
+let sign;
+if (numeriko > 0) sign = "positive";
+else if (numeriko < 0) sign = "negative";
+else sign = "even";
+console.log(sign);
+//19)
+
+let Yearnum = 2024;
+let isCenturyLeapYear;
+
+if (Yearnum % 400 === 0 && Yearnum % 100 === 0) {
+    isCenturyLeapYear = true;
+} else isCenturyLeapYear = false;
+console.log(isCenturyLeapYear);
+//20)
+
+let month1 = 3;
+let daysInMonth;
+
+switch (month1){
+    case 1:
+        daysInMonth = "31";
+        break;
+        case 2:
+            daysInMonth = "28";
+            break;
+            case 3:
+            daysInMonth = "31";
+            break;
+            case 4:
+            daysInMonth = "30";
+            break;
+            case 5:
+            daysInMonth = "31";
+            break;
+            case 6:
+            daysInMonth = "30";
+            break;
+            case 7:
+            daysInMonth = "31";
+            break;
+            case 8:
+            daysInMonth = "31";
+            break;
+            case 9:
+            daysInMonth = "30";
+            break;
+            case 10:
+            daysInMonth = "31";
+            break;
+            case 11:
+            daysInMonth = "30";
+            break;
+            case 12:
+            daysInMonth = "31";
+            break;
+            default:
+                daysInMonth = "out of range";
+}console.log(daysInMonth);
+
+//21)
+
+let nestednumber = -8;
+let sign1;
+let parity;
+
+if (nestednumber > 0){
+    sign1 = "Positive";
+if (nestednumber % 2 === 0) {
+    parity = "Even";
+} else {
+    parity = "Odd";
+}
+
+}  else if (nestednumber < 0) {
+    sign1 = "Negative";
+     if (nestednumber % 2 === 0) {
+        parity = "An even negative number";
+     } else {
+        parity = "An odd negative number";
+       }
+     } else {
+         sign1 = "Zero";
+         parity = "Neither even nor odd";
+}
+console.log(`Sign: ${sign1}` + " , " + parity);
 //
+
