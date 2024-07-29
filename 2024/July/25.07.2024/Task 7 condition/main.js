@@ -339,17 +339,63 @@ if (isLeapYear % 400 === 0) {
     console.log(isLeapYear);
     //24)
 
-    let age2;
+    let age2 = 27;
     let isEmployed = true;
     let category;
 
     if (age2 < 18 ) {
         category = "Student";
     }else if (age2 >= 18 && age2 <= 65 ) {
-     } if (isEmployed){
+      if (isEmployed){
         category = "Employed Adult";
     } else category = "Unemployed Adult";
-    
+}
 else category = "Retire";
+
+console.log(age2," ",category);
     
+    //25)
+
+    let monthh = 4; // חודש לדוגמה: מרץ
+    let seasonn = '';
+
+switch (monthh) {
+    case 1:
+        case 2:
+    seasonn = `Winter`;
+break;
+case 3:
+    seasonn = `Spring`;
+    break;
+    case 4:
+        seasonn = `Spring` + " " + `Winter`;
+        break;
+        case 5: 
+        seasonn =  `Spring`
+ break;
+ case 6:
+    case 7:
+        case 8:
+            case 9:
+    seasonn = `Summer`;
+    break;
+    case 10:
+        case 11:
+            case 12:
+                 season = `Fall`;
+                 break;
+        default:
+            monthh = `Invalid month`
+        break;
+}
+
+console.log(seasonn);
+
+// 26)
+
+let X;
+let Y; 
+
+if (X = 1) { 
     
+}
