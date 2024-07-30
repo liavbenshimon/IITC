@@ -19,19 +19,18 @@
 
 // 1)
 let food =  ["apple" , "banana" , "meat" , "bluebery" , "egg"];
-//2)
+// 2)
 console.log(food[2]);
 //3)
 food [1] = "grape";
-console.log(food[1]);
+console.log(food);
 //4)
 food.push("chese");
 console.log(food);
 //5)
 food.shift (0);
 console.log(food);
-//6)
-for ( let i = 0 ; i>=0 ; i++){
-    i=food
+// 6)
+for ( let i = 0 ; i < food.length ; i++) {
+    console.log(food[i]);
 }
-console.log(f);
