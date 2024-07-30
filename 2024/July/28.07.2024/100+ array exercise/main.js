@@ -81,6 +81,7 @@ console.log(colors);
 //20)
  
 let firstElement = season[0];
-let lastElement
+let lastElement = season[season.length -1];
+season[0]
 
 
