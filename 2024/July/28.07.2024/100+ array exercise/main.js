@@ -114,3 +114,22 @@ for (i= list.length; i > 0; i--) {
 }
 
 //26)
+fruits.unshift("mango");
+console.log(fruits);
+
+//27)
+numbers.shift(1);
+console.log(numbers);
+
+//28)
+numbers.unshift(5,6,7);
+console.log(numbers);
+
+//29)
+let numberlist = [];
+for ( i = 5 ; i >= 1 ; i-- ){
+    numberlist.unshift(i);
+    console.log(numberlist);
+}
+
+30)
