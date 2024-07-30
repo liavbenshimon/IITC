@@ -82,6 +82,35 @@ console.log(colors);
  
 let firstElement = season[0];
 let lastElement = season[season.length -1];
-season[0]
+season[0] = lastElement;
+season[season.length-1] = firstElement
+console.log(season);
 
+//////Array Methods: push() and pop()
+//21)
+fruits.push("orange")
+console.log(fruits);
 
+//22)
+numbers.pop(4);
+console.log(numbers);
+
+//23)
+colors.push("grey" , "pink" , "yellow");
+console.log(colors);
+
+//24)
+let pushnumbers = [];
+for (let i = 0; i <= 5; i++) {
+    pushnumbers.push(i);
+    }
+    console.log(pushnumbers);
+
+ //25)
+    let list = [1,2,3,4,5];
+for (i= list.length; i > 0; i--) {
+    let poppednum = list.pop();
+    console.log(poppednum);
+}
+
+//26)
