@@ -1,3 +1,4 @@
+
 //1) empty array called fruits
 let fruits = [];
 
@@ -81,8 +82,8 @@ console.log(colors);
 //20)
  
 let firstElement = season[0];
-let lastElement = season[season.length -1];
-season[0] = lastElement;
+season [0] = season[season.length -1];
+
 season[season.length-1] = firstElement
 console.log(season);
 
@@ -127,10 +128,14 @@ console.log(numbers);
 
 //29) לבדוק עם מישה ו בכיתה
 let numberlist = [];
-for (i=5;i>=1;i-- ){
+for (i=1;i<=5;i++ ){
     numberlist.unshift(i);
     console.log(numberlist);
 }
 
 //30)
-
+let ridel = [1,2,3,4,5];
+for ( i = 0; i<ridel.length ;i++){
+        console.log(ridel.shift());
+}
+        
