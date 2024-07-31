@@ -130,12 +130,14 @@ console.log(numbers);
 let numberlist = [];
 for (i=1;i<=5;i++ ){
     numberlist.unshift(i);
-    console.log(numberlist);
 }
+console.log(numberlist);
 
 //30)
 let ridel = [1,2,3,4,5];
 for ( i = 0; i<ridel.length ;i++){
-        console.log(ridel.shift());
+    console.log(ridel.shift());
 }
-        
+//31)
+colors.indexOf();
+console.log(colors);
