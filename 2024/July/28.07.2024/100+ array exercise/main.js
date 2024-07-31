@@ -125,11 +125,12 @@ console.log(numbers);
 numbers.unshift(5,6,7);
 console.log(numbers);
 
-//29)
+//29) לבדוק עם מישה ו בכיתה
 let numberlist = [];
-for ( i = 5 ; i >= 1 ; i-- ){
+for (i=5;i>=1;i-- ){
     numberlist.unshift(i);
     console.log(numberlist);
 }
 
-30)
+//30)
+
