@@ -1,3 +1,4 @@
+
 // 1)
 let age = 20; // You can set this to any number to test
 let canVote = true;
@@ -10,9 +11,9 @@ if (age >= 18) {
 console.log();; // This will print true if age is 18 or greater, otherwise false
 
 //2)
-let temerature = 9;
+let temerature123 = 9;
 let weather;
-if (temerature < 0){
+if (temerature123 < 0){
      weather = "freezing";
     console.log(weather);
 } else {
@@ -361,7 +362,7 @@ console.log(age2," ",category);
 
 switch (monthh) {
     case 1:
-        case 2:
+    case 2:
     seasonn = `Winter`;
 break;
 case 3:
@@ -422,4 +423,82 @@ if (Y > 0) {
     
 console.log(quadrnat)
 
-// 27)
+// 27)   //solid // liquid // gas
+let temperature = 30;
+let pressure = 2;
+
+if (temperature > 0 && temperature < 100) {
+    if (pressure === 1) {
+        console.log(" The At standard pressure, water is liquidis liquid.");
+    }
+     else if (pressure < 1) {
+    console.log(`Lower pressure may cause water to boil at a temperature lower than 100°C, turning it into gas.`);
+     }
+     else {
+     console.log(`Higher pressure can keep water in liquid form even at temperatures above 100°C.`);
+     }
+} else if (temperature <= 0) {
+    if (pressure >= 1) {
+        console.log("Water is in solid state (ice).");
+       } else {
+        console.log("Water might still be solid, but with lower pressure, freezing point decreases.");
+       }
+} else {
+    if (pressure === 1) {
+        console.log("Water is in gas state (steam).");
+    } else if (pressure < 1) {
+        console.log("At lower pressure, water has boiled and is gas.");
+    } else {
+        console.log("At higher pressure, water might still be liquid even above 100°C.");
+    }
+    
+};
+    // 28
+    
+let month123 = 2;
+let isLeapYear123 = true;
+
+    switch (month123) {
+        case 1:
+           month123 = "January - 31 days"
+            break;
+            case 2:
+                 if (isLeapYear123 = true) {
+                  console.log( "February - 29 days");}  
+                else console.log( "February - 28 days");
+                 break;
+                 case 3:
+                    month123 = "March - 31 days"
+                     break;
+                     case 4:
+                        month123 = "April - 30 days"
+                         break;
+                         case 5:
+                            month123 = "May - 31 days"
+                             break;
+                             case 6:
+                                month123 = "June - 30 days"
+                                 break;
+                                 case 7:
+                                    month123 = "July - 31 days"
+                                     break;
+                                     case 8:
+                                        month123 = "August - 31 days"
+                                         break;
+                                         case 9:
+                                            month123 = "September - 30 days"
+                                             break;
+                                             case 10:
+                                                month123 = "October - 31 days"
+                                                 break;
+                                                 case 11:
+                                                    month123 = "November - 30 days"
+                                                     break;
+                                                     case 12:
+                                                        month123 = "December - 31 days"
+                                                         break;                                                                                                                                                                                                                                                                                      
+        default: " Not valid day"
+            break;
+    };
+
+    
