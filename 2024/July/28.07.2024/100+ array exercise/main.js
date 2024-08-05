@@ -150,10 +150,29 @@ console.log(colors.lastIndexOf("RED"));
 console.log(colors);
 //34)
 let newArray = ["do","me","fa","do"];
-
-
-
-
+console.log(newArray.indexOf("do"));
+console.log(newArray.lastIndexOf("do"));
+//35)
+let isItExist = newArray.indexOf("me") === -1 ? false:true;
+console.log(isItExist);
+//36)
+console.log(fruits);
+console.log(fruits.includes("apple"));
+//37)
+console.log(numbers);
+console.log(numbers.includes(10));
+//38)
+console.log(colors);
+let newColor = (colors.length)/2;
+console.log(colors.includes("blue",newColor));
+//39)
+function checkSpecificValue(str) {
+    str="leti"
+    if (str.includes()) {
+        return true;
+    }return false;
+};
+console.log(checkSpecificValue("l"));
 
 
 
