@@ -97,9 +97,73 @@ function areaOfRectangle(width,height) {
 console.log(areaOfRectangle(10,2));
 
 //14.
-function remainderDivision(params) {
-    
+function remainderDivision(firstNumber,secondNumber) {
+    return firstNumber%secondNumber;
 }
+console.log(remainderDivision(4,3));
+
+//15.
+function logType(anyValue) {
+    return typeof anyValue;
+}
+console.log(logType(" "));
+
+//16.
+function invertBoolean(value) {
+return !value;
+}
+let vhv = invertBoolean(true);
+console.log(invertBoolean(vhv));
+
+//17.
+function concatenateStrings(str1,str2) {
+    return str1+" "+str2;
+};
+console.log(concatenateStrings(`Hello`,`World`));
+
+//18.
+
+function findSmaller(first,second) {
+    if (first > second) {
+        return second
+    }else "Zero";
+};
+console.log(findSmaller(2,1));
+//19.
+function greetWithDefault(name1 = `Guest`,) {
+    return `Hello ${name1}`
+    };
+        console.log(greetWithDefault("liav"));
+//20. 
+function isLongString(str) {
+    return str.length > 10;
+  }
+  
+  let shortString = "hello";
+  let longString = "this is a long string";
+  
+  console.log(isLongString(shortString)); // Output: false
+  console.log(isLongString(longString)); // Output: true
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
