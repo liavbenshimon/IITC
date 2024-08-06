@@ -210,12 +210,14 @@ let school = {
 
 // TODO: Write a function to update a student's grade in a subject
 function updateStudentGrade(school, studentId, subject, newGrade) {
-
-
-
-
-
+    for (let i = 0; i < school.students.length; i++) {
+        if (school.students[i] === studentId) {
+            school.students[i].grades[subject] = newGrade;
+        }
+    }
 }
+console.log(updateStudentGrade(school,1,math,99));
+
 
 // updateStudentGrade(school, 1, "math", 90);
 // console.log("Updated School:", school);
