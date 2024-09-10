@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .yellow-box {
+        background-color: yellow;
+        border: 2px solid blue;
+        padding: 16px;
+        margin-bottom: 16px;
+        position: sticky;
+      }
+
+      p {
+        color: red;
+      }
+
+      .yellow-box p span {
+        color: black;
+      }
+
+      .grey-shadow {
+        background-color: grey;
+        color: white;
+        padding: 16px;
+        border-radius: 10px;
+      }
+
+      .circle-container {
+        display: block;
+        gap: 10px; /* מרווח בין העיגולים */
+        padding: 10px;
+      }
+
+      .circle {
+        display: inline-block;
+        padding: 1%;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        position: relative;
+      }
+
+      .circle-one {
+        background: red;
+      }
+
+      .circle-two {
+        background: blue;
+      }
+
+      .circle-three {
+        background: green;
+      }
+
+      .second-container {
+        display: block;
+        gap: 1px; /* מרווח בין העיגולים */
+        padding: 6px;
+      }
+      /* ///////////////////////////////////////////////////////////////////// */
+      .yellow-box .inner-box {
+        background-color: red;
+        width: 95%;
+        height: 100px;
+        /* padding: 10%; */
+        margin-left: auto;
+        margin-right: auto;
+        position: relative; /* Allows positioning of children */
+      }
+
+      .item1 {
+        background-color: black;
+        color: white;
+        padding: 4px;
+        width: fit-content;
+        position: absolute; /* Allows you to move the item within its container */
+        top: 0; /* Moves to the top */
+        left: 0; /* Moves to the left */
+      }
+
+      .item2 {
+        background-color: black;
+        color: white;
+        padding: 4px;
+        width: fit-content;
+        position: absolute;
+        top: 15%; /* Moves 75% down from the top */
+        right: 0; /* Moves to the right */
+      }
+
+      .item3 {
+        background-color: black;
+        color: white;
+        width: 100px; /* רוחב */
+        height: 50px; /* גובה */
+        position: absolute;
+        top: 50%; /* ממרכז את האלמנט אנכית */
+        left: 50%; /* ממרכז את האלמנט אופקית */
+        transform: translate(-50%, -50%); /* מבטיח מיקום מדויק במרכז */
+        border-radius: 100%; /* גורם לצורה אליפטית */
+        box-shadow: 0px 10px 15px white; /* מוסיף צל לבן */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .buttons-container {
+        position: sticky;
+        bottom: 1px;
+        left: 6%;
+        display: inline-block;
+        gap: 10px;
+        letter-spacing: 8px;
+        margin-top: 147px;
+      }
+
+      .btn {
+        background-color: blueviolet;
+        color: aliceblue;
+        letter-spacing: 1px;
+        border: transparent;
+      }
+
+      .btn2 {
+        color: aliceblue;
+        letter-spacing: 1px;
+        background-color: blueviolet;
+        border-radius: 100%; /* גורם לצורה אליפטית */
+        border: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="yellow-box">
+      <p>1st Lorem ipsum dolor sit amet consectetur</p>
+      <p>2nd Loren ipsum dolor <span>BLACK</span>sit amet consectetur</p>
+      <p class="grey-shadow">3rd Lorem ipsum dolor sit amet consectetur</p>
+    </div>
+
+    <div class="yellow-box">
+      <div class="circle-container">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="circle circle-three"></div>
+      </div>
+    </div>
+
+    <div class="yellow-box">
+      <div class="second-container">
+        <div class="inner-box">
+          <div class="item1">left</div>
+          <div class="item2">right</div>
+          <div class="item3">middle</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- הכפתורים עכשיו מחוץ לריבועים הצהובים -->
+    <div class="buttons-container">
+      <button class="btn">explore</button>
+      <button class="btn2">join</button>
+    </div>
+  </body>
+</html>
