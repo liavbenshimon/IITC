@@ -1,0 +1,91 @@
+/* בסיסי לכל המסמך */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(218, 211, 190); /* צבע רקע כללי */
+    color: rgb(37, 67, 54); /* צבע טקסט */
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: rgb(37, 67, 54); /* צבע רקע הכותרת */
+    color: rgb(218, 211, 190); /* צבע טקסט הכותרת */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .features {
+    padding: 20px;
+    background-color: rgb(183, 181, 151); /* רקע לטפסים */
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(37, 67, 54); /* צבע כותרות שדות */
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 8px;
+    border: 2px solid rgb(107, 138, 122);
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: rgb(37, 67, 54); /* צבע כפתור ההגשה */
+    color: rgb(218, 211, 190); /* צבע טקסט על הכפתור */
+    cursor: pointer;
+    border: none;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgb(107, 138, 122); /* צבע כפתור כשהעכבר מעליו */
+  }
+  
+  .container-employees {
+    padding: 20px;
+  }
+  
+  .view-employees li {
+    background-color: rgb(107, 138, 122); /* רקע עבור רשימת העובדים */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: rgb(218, 211, 190); /* טקסט ברשימת העובדים */
+  }
+  .employee-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(218, 211, 190);
+  }
+  
+  .edit-btn {
+    background-color: rgb(44, 73, 58); /* צבע לכפתור עריכה */
+    border-radius: 8px;
+  }
+  
+  .delete-btn {
+    background-color: rgb(183, 67, 67); /* צבע לכפתור מחיקה */
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  

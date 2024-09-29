@@ -1,109 +1,41 @@
-//1.1
-const result = document.getElementById("first");
-result.style.backgroundColor = "lightblue";
-result.style.color = "red"
-//1.2
-const geri = document.querySelectorAll("li")
-for (let i = 0; i < geri.length; i++){
-    console.log(geri[i].textContent);
-}
+// Select the content div and change its styles
+const divi = document.getElementById("content")
+divi.style.backgroundColor = "lightblue"
+divi.style.color = "red"
 
-//1.3
-let yellowBtn = document.getElementById("Highlight_List_Items")
-
-yellowBtn.addEventListener("click", function (){
-    for (let i = 0; i < geri.length; i++){
-        geri[i].style.backgroundColor = "yellow"
+// Select all <li> items and log their text content
+const listItems = document.querySelectorAll("#list li")
+    for(let i = 0; i < listItems.length; i++){
+        console.log(listItems[i].textContent);     
     }
-})
-  
 
-//2.1
-let getItem = document.getElementById("itemList");
-let addItemButton = document.getElementById("addItemButton")
-
-addItemButton.addEventListener("click",function(){
-let newListItem = document.createElement('li')
-newListItem.textContent = "New Item"
-getItem.appendChild(newListItem);
+// Add event listener to the button
+const highlightBtn = document.querySelector("#btn");
+highlightBtn.addEventListener("click", ()=>{
+    for(let i = 0; i < listItems.length; i++){
+    listItems[i].style.backgroundColor = "yellow";
+    }
 });
 
-//2.1
 
 
+const newList = document.getElementById("new-list")
+const addBtn = document.getElementById("add-item-btn")
 
+addBtn.addEventListener("click", ()=>{
+    const newItem = document.createElement("li")
+    newItem.textContent = "New item"
+    newList.appendChild(newItem);
+})
 
 
 
 
+// const createLiElemnt = document.createElement("li");
+// createLiElemnt.addEventListener("click", (ev)=>{
+//     ev.preventDefault();
+//     const newLi = newList.createElement
+//     listItems.textContent = "Add item";
+    
+// })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let selectItem = document.querySelectorAll('li');
-// for (let i = 0; i < selectItem.length; i++){
-//     selectItem[i].addEventListenerelement("click", function() {
-//         for (let j = 0; j < listItems.length; j++) {
-//             listItems[j].classList.remove('selected');
-//             selectItem[j].style.fontWeight = "normal"; // Remove bold from all
-
-//         }
-//         listItems[i].classList.add('selected');
-//         selectItem[i].style.fontWeight = "bold"; // Make the selected item bold
-
-//     });
-// }

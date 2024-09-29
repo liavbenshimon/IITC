@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: grey;
+        gap: 10px;
+        height: 400px;
+        width: 400px;
+        margin: 10px;
+        padding: 10px;
+        color: aliceblue;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .yellow {
+        background-color: yellow;
+        grid-column-start: span 2;
+      }
+      .red {
+        background-color: red;
+      }
+      .brown {
+        background-color: brown;
+      }
+      .pink {
+        background-color: pink;
+      }
+      .green {
+        background-color: green;
+        grid-row-start: span 2;
+      }
+      .black {
+        background-color: black;
+      }
+      .grey {
+        background-color: lightblue;
+      }
+      .purple {
+        background-color: purple;
+        grid-column-start: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="blue">1</div>
+      <div class="yellow">2</div>
+      <div class="red">3</div>
+      <div class="brown">4</div>
+      <div class="pink">5</div>
+      <div class="green">6</div>
+      <div class="black">7</div>
+      <div class="grey">8</div>
+      <div class="purple">9</div>
+    </div>
+  </body>
+</html>

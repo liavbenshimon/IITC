@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Employee Management System</h1>
+    </header>
+    <div class="features">
+      <form>
+        <label for="input-first-name">First Name</label>
+        <input
+          type="text"
+          class="input-first-name"
+          id="input-first-name"
+          placeholder="Add first name"
+        />
+        <br />
+        <label for="input-last-name">Last Name</label>
+        <input
+          type="text"
+          class="input-last-name"
+          id="input-last-name"
+          placeholder="Add last name"
+        />
+        <br />
+        <label for="input-age">Age</label>
+        <input
+          type="number"
+          class="input-age"
+          id="input-age"
+          placeholder="Add age"
+        />
+        <br />
+        <label for="input-start-date">Start Date</label>
+        <input type="date" class="input-start-date" id="input-start-date" />
+        <br />
+        <label for="input-department">Department</label>
+        <input
+          type="text"
+          class="input-department"
+          id="input-department"
+          placeholder="Add department"
+        />
+        <br />
+        <label for="input-salary">Salary</label>
+        <input
+          type="number"
+          class="input-salary"
+          id="input-salary"
+          placeholder="Add salary"
+        />
+
+        <input class="submit" type="submit" />
+      </form>
+      <br />
+      <label for="department-filter">Filter by Department</label>
+      <select id="department-filter">
+        <option value="">All Departments</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Sales">Sales</option>
+        <option value="IT">IT</option>
+        <option value="Finance">Finance</option>
+        <option value="HR">HR</option>
+        <option value="Operations">Operations</option>
+        <option value="Logistics">Logistics</option>
+      </select>
+    </div>
+
+    <div class="container-employees">
+      <ul class="view-employees"></ul>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="controller.js"></script>
+  </body>
+</html>
