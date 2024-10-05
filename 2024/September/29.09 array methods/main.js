@@ -233,20 +233,78 @@
 // console.log(cherryIndex);
 
 // 30
+// const number = [1,2,-3,4,5,-6];
+// const checkNegativ = number.find((num)=>{
+//     return num < 0; 
+// });
+// console.log(checkNegativ);
 
+// 31
+// const numbers =  [3, 1, 4, 1, 5, 9, 2, 6, 5];
+// const  ascendingOrder = numbers.sort((a,b) => a-b );
+// console.log(ascendingOrder);
 
+// 32
+// const fruits = ["apple", "banana", "cherry", "strawberry", "grape", "orange", "peach"];
+// const azFrutis = fruits.sort();
+// console.log(azFrutis);
 
+//  33 
+// const numbers =  [3, 1, 4, 1, 5, 9, 2, 6, 5];
+// const  descendingOrder = numbers.sort((a,b) => b-a );
+// console.log(descendingOrder);
 
+// 34
+// const fruits = ["apple", "banana", "cherry", "strawberry", "grape", "orange", "peach"];
+// const azFrutis = fruits.sort((a,b)=>a.length-b.length);
+// console.log(azFrutis);
 
+// 35
+// const nameAndAge = [{name: 'יוחנן', age: 25}, {name: 'יעל', age: 30}, {name: 'בועז', age: 20}];
+// const sortByAge = nameAndAge.sort((a,b) => a.age-b.age);
+// console.log(sortByAge);
 
+// 36
+// const randomArray =  [1, [2, 3], [4, [5, 6]]];
+// const flatIt = randomArray.flat(2);
+// console.log(flatIt);
 
+// 37
+// const newArray = [1, [2, [3, [4]]]];
+// const flatByTwo = newArray.flat(2);
+// console.log(flatByTwo);
 
+// 38
+// const arrayWithHoles = [1, 2, , 4, 5];
+// const flattenedArray = arrayWithHoles.flat();
+// console.log(flattenedArray);
 
+// 39
+// const az =  ['א', ['ב', 'ג'], 'ד'] 
+// const res = az.flat()
+// console.log(res);
 
+// 40
+// const randomArray =  [1, [2, 3], [4, [5, 6]]];
+// const flatIt = randomArray.flat(Infinity);
+// console.log(flatIt);
 
+// 41
+// const letters = ['א', 'ב', 'ג', 'ד'];
 
+// letters.forEach((letter, index) => {
+//     console.log(`Index: ${index}, Value: ${letter}`);
+// });
 
+// 42
+// const arr = [10, 20, 30, 40];
+// const result = arr.map((value, index) => {
+//     return { index: index, value: value };
+// });
 
+// console.log(result);
+ 
+// 43
 
 
 
