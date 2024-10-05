@@ -305,7 +305,57 @@
 // console.log(result);
  
 // 43
+// const fruits = ["אננס","אבטיח","בננה","תפוח"];
+// const res = fruits.filter(str=>str.includes("א"));
+// console.log(res);
+ 
+// 44
+// const fruits = ['א', 'ב', 'א', 'ג', 'ב', 'א'];
+// const res = fruits.reduce( (acc,letter) => {
+//     acc[letter] = (acc[letter] || 0) + 1;
+//     return acc;
+// },{})
 
+// console.log(res);
+
+// 45
+// const check = ["שלום","עולם",`ג'אווה סקריפט`];
+// const res = check.some(letter => letter.includes("ז"));
+// console.log(res);
+
+// 46
+// const numbers = [2,4,6,8];
+// const res = numbers.every(num => num % 2 === 0);
+// console.log(res);
+
+// 47
+// const users = [{id: 1, status: 'לא פעיל'}, {id: 2, status: 'פעיל'}];
+// const res = users.find(str => str.status === "פעיל");
+// console.log(res);
+
+// 48
+// const numbers = [3, 7, -2, 9, -5];
+// const res = numbers.findIndex(num => num < 0);
+// console.log(res);
+
+// 49
+// const languages = ['JavaScript', 'Python', 'Ruby', 'Java'];
+// const res = languages.sort((a,b) => b.length-a.length);
+// console.log(res);
+
+// 50
+
+// const flatNumbers = [1, [2, [3]], [4, [5]]];
+// const result = flatNumbers.flat(1)
+// console.log(result);
+
+// 51
+// const hello =  ['ש', 'ל', 'ו', 'ם'];
+// let word = ` `;
+// const res = hello.forEach(str => {
+//     word += str;
+// });
+// console.log(word);
 
 
 
