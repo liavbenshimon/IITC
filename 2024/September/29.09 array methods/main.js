@@ -459,5 +459,78 @@
 // console.log(res);
 
 // 71
+// const numbers = [1, 4, 9, 16];
+// let roots = [];
+// const squareRoot = numbers.forEach(num => roots.push(Math.sqrt(num)))
+// console.log(roots);
+
+// 72
+// const az = ["א","ב","ג"];
+// const res = az.map(str => str+str)
+// console.log(res);
+
+// 73
+// const numbers = [5, 10, 15, 20, 25];
+// const filter = numbers.filter(num => num>10 & num < 20);
+// console.log(filter);
+
+// 74
+// const oneObject = [{א: 1}, {ב: 2}, {ג: 3}];
+// const res = oneObject.reduce((acc,current)=>{
+//     return {...acc,...current};
+// },{});
+// console.log(res);
+
+// 75
+// const check = [{x: 1}, {y: 2}, {z: 3}];
+// const res = check.some(obj => "y" in obj);
+// console.log(res);
+
+// 76
+// const classes = ['א1', 'ב2', 'ג3'] ;
+// const res = classes.every( str => 
+//     /[א-ת]/.test(str) && /\d/.test(str)
+// );
+// console.log(res);
+
+// 77
+// const lessThanFifty = [{מחיר: 60}, {מחיר: 40}, {מחיר: 70}];
+// const check = lessThanFifty.filter(num => num.מחיר < 50);
+// console.log(check);
+
+// 78
+// const str = [1, '', true, 0, null, 'שלום'];
+// const fallsyIndex = str.findIndex(str => !str);
+// console.log(fallsyIndex);
+
+// 79
+// const sortIt = [3.14, 2.71, 1.41, 1.73];
+// const res = sortIt.sort((a,b) => a-b);
+// console.log(res);
+
+// 80
+// const infinity =  ['א', ['ב', ['ג']]];
+// const res = infinity.flat(Infinity);
+// console.log(res);
+
+// 81
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const res = numbers.filter(num => num % 2 === 0);
+// const squareRoot = res.map(num => Math.pow(num,2));
+// console.log(squareRoot);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
