@@ -357,7 +357,107 @@
 // });
 // console.log(word);
 
+// 52
+// const numbers = [1,2,3,4,5];
+// const multipliedByTen = numbers.map(num => num + 10)
+// console.log(multipliedByTen);
 
+// 53
+// const numbers = [1,2,3,4,5,6,7,8,9];
+// const dividedByThree = numbers.filter(num => num % 3 === 0);
+// console.log(dividedByThree);
 
+// 54
+// const words = ['קצר', 'בינוני', 'הכי ארוך', 'ארוך יותר'];
+// const shortestWord = words.reduce((acc,str) => {
+//     return str.length > acc.length? str : acc;
+// },words[0]);
+// console.log(shortestWord);
+
+// 55
+// const numbers = [1, 3, 5, 7, 9];
+// const check = numbers.some(num => num % 2 === 0)
+// console.log(check);
+
+// 56
+// const fruits = ['תפוח', 'תפ', 'תפוז'];
+// const startCheck = fruits.every(str => str.startsWith("תפ"));
+// console.log(startCheck);
+
+// 57
+// const users = [{id: 1, completed: false}, {id: 2, completed: true}];
+// const completedCheck = users.find(str => str.completed === true);
+// console.log(completedCheck);
+
+// 58
+// const fruits = ['תפוח', 'בננה', 'דובדבן'];
+// const res = fruits.findIndex(str => str.includes("בננה"));
+// console.log(res);
+
+// 59
+// const names = [{name: 'יוחנן', age: 25}, {name: 'יעל', age: 30}, {name: 'בועז', age: 20}];
+// const sortByName = names.sort((a,b) => a.name.localeCompare(b.name));
+// console.log(sortByName);
+
+// 60
+// const numbers = [1, [2, 3], [4, [5, 6]]];
+// const flat =numbers.flat(2);
+// console.log(flat);
+
+// 61
+// const greeting = 'שלום';
+// greeting.split("").forEach(char => console.log(char));
+
+// 62
+// const fruits = ['תפוח', 'בננה', 'דובדבן'];
+// const char = fruits.map((char) => {
+//     return char.charAt(0);
+// });
+// console.log(char);
+
+// 63
+// const strings = ['א', 'אב', 'אבג', 'אבגד'];
+// const strThree = strings.filter(str => str.length > 3);
+// console.log(strThree);
+
+// 64
+// const fruits = ['תפוח', 'בננה', 'דובדבן'];
+// const count = fruits.reduce((acc,current) =>{
+//    acc += current.length
+//    return acc
+// },0);
+// console.log(count);
+
+// 65
+// const string = ['שלום', 'עולם', "ג'אווהסקריפט"];
+// const upThanTen = string.some(str => str.length > 10);
+// console.log(upThenTen);
+
+// 66
+// const numbers = [10,20,30,40,50];
+// const biggerThanThirty = numbers.every(num => num > 5);
+// console.log(biggerThanThirty);
+
+// 67
+// const string = ['ספר', 'דלת', 'חלון']
+// const findChar = string.find(char => char.includes("ו"));
+// console.log(findChar);
+
+// 68
+// const numbers = [5, 10, 15, 20];
+// const res = numbers.findIndex(num => num > 10);
+// console.log(res);
+
+// 69
+// const string = ['אאא', 'בב', 'ג'];
+// const res = string.sort((a,b) => a.length - b.length);
+// console.log(res);
+
+// 70
+// const flatByThree = [1, [2, [3, [4]]]];
+// const res = flatByThree.flat(3);
+// console.log(res);
+
+// 71
 
 
