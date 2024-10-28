@@ -1,102 +1,277 @@
-import express, { response } from "express";
+import express from "express";
+import { promises as fs } from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const PORT = 3000;
 
-import jokes from "./db/jokes.json" assert {type: "json"};
-import users from "./db/users.json" assert {type: "json"};
-import products from "./db/products.json" assert {type: "json"};
+// Get current directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(express.json())
+// File paths
+const JOKES_PATH = path.join(__dirname, "db", "jokes.json");
+const USERS_PATH = path.join(__dirname, "db", "users.json");
+const PRODUCTS_PATH = path.join(__dirname, "db", "products.json");
 
-//Route to get a random joke
-app.get("/api/jokes/random", (req, res) => {
-    const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
-    res.send(randomJoke);
-});
+app.use(express.json());
 
-//Get joke by ID 
-app.get("/api/jokes/:id", (req, res) => {
-    const id = +req.params["id"];
+// Helper function to read JSON files
+async function readJSONFile(filePath) {
+    try {
+        const data = await fs.readFile(filePath, "utf8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error(`Error reading file ${filePath}:`, error);
+        throw error;
+    }
+}
 
-    const data = jokes.find((joke) => joke.id === id);
+// Helper function to write JSON files
+async function writeJSONFile(filePath, data) {
+    try {
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error(`Error writing file ${filePath}:`, error);
+        throw error;
+    }
+}
 
-    if (data) {
-        res.send(data); 
-    } else {
-        res.send({ error: "This joke ID does not exist" }); 
+// Jokes Routes
+app.get("/api/jokes/random", async (req, res) => {
+    try {
+        const jokes = await readJSONFile(JOKES_PATH);
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+        res.json(randomJoke);
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
-//Add new jokes
-app.post("/api/jokes", (req, res) => {
-    const newJoke = req.body
-    jokes.push(newJoke)
-    res.send({
-        message: "new joke addes",
-        joke: newJoke
-    });
-});
-
-//Route to get a random user
-app.get("/api/users/random", (req, res) => {
-    const randomusers = users[Math.floor(Math.random()*users.length)]
-    res.send(randomusers);
-});
-
-//Get user by ID 
-app.get("/api/users/:id", (req, res) => {
-    const id = +req.params["id"];
-
-    const data = users.find((user) => user.id === id);
-
-    if (data) {
-        res.send(data); 
-    } else {
-        res.send({ error: "This user ID does not exist" }); 
+app.get("/api/jokes/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const jokes = await readJSONFile(JOKES_PATH);
+        const joke = jokes.find(joke => joke.id === id);
+        
+        if (joke) {
+            res.json(joke);
+        } else {
+            res.status(404).json({ error: "Joke not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
-//Add new user
-app.post("/api/users", (req, res) => {
-    const newUsers = req.body
-    users.push(newUsers)
-    res.send({
-        message: "new user addes",
-        user: newUsers
-    });
-});
-
-//Route to get a random product
-app.get("/api/products/random", (req, res) => {
-    const randomproducts = products[Math.floor(Math.random()*products.length)]
-    res.send(randomproducts);
-});
-
-//Get product by ID 
-app.get("/api/products/:id", (req, res) => {
-    const id = +req.params["id"];
-
-    const data = products.find((product) => product.id === id);
-
-    if (data) {
-        res.send(data); 
-    } else {
-        res.send({ error: "This product ID does not exist" }); 
+app.post("/api/jokes", async (req, res) => {
+    try {
+        const jokes = await readJSONFile(JOKES_PATH);
+        const newJoke = {
+            id: jokes.length > 0 ? Math.max(...jokes.map(joke => joke.id)) + 1 : 1,
+            ...req.body
+        };
+        jokes.push(newJoke);
+        await writeJSONFile(JOKES_PATH, jokes);
+        res.status(201).json({ message: "New joke added", joke: newJoke });
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
-//Add new product
-app.post("/api/products", (req, res) => {
-    const newProducts = req.body
-    products.push(newProducts)
-    res.send({
-        message: "new user addes",
-        user: newProducts
-    });
+app.patch("/api/jokes/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const jokes = await readJSONFile(JOKES_PATH);
+        const jokeIndex = jokes.findIndex(joke => joke.id === id);
+        
+        if (jokeIndex !== -1) {
+            jokes[jokeIndex] = { ...jokes[jokeIndex], ...req.body, id };
+            await writeJSONFile(JOKES_PATH, jokes);
+            res.json({ message: "Joke updated", joke: jokes[jokeIndex] });
+        } else {
+            res.status(404).json({ error: "Joke not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
 });
 
+app.delete("/api/jokes/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const jokes = await readJSONFile(JOKES_PATH);
+        const jokeIndex = jokes.findIndex(joke => joke.id === id);
+        
+        if (jokeIndex !== -1) {
+            const deletedJoke = jokes.splice(jokeIndex, 1)[0];
+            await writeJSONFile(JOKES_PATH, jokes);
+            res.json({ message: "Joke deleted", joke: deletedJoke });
+        } else {
+            res.status(404).json({ error: "Joke not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+// Users Routes
+app.get("/api/users/random", async (req, res) => {
+    try {
+        const users = await readJSONFile(USERS_PATH);
+        const randomUser = users[Math.floor(Math.random() * users.length)];
+        res.json(randomUser);
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.get("/api/users/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const users = await readJSONFile(USERS_PATH);
+        const user = users.find(user => user.id === id);
+        
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ error: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.post("/api/users", async (req, res) => {
+    try {
+        const users = await readJSONFile(USERS_PATH);
+        const newUser = {
+            id: users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 1,
+            ...req.body
+        };
+        users.push(newUser);
+        await writeJSONFile(USERS_PATH, users);
+        res.status(201).json({ message: "New user added", user: newUser });
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.patch("/api/users/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const users = await readJSONFile(USERS_PATH);
+        const userIndex = users.findIndex(user => user.id === id);
+        
+        if (userIndex !== -1) {
+            users[userIndex] = { ...users[userIndex], ...req.body, id };
+            await writeJSONFile(USERS_PATH, users);
+            res.json({ message: "User updated", user: users[userIndex] });
+        } else {
+            res.status(404).json({ error: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.delete("/api/users/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const users = await readJSONFile(USERS_PATH);
+        const userIndex = users.findIndex(user => user.id === id);
+        
+        if (userIndex !== -1) {
+            const deletedUser = users.splice(userIndex, 1)[0];
+            await writeJSONFile(USERS_PATH, users);
+            res.json({ message: "User deleted", user: deletedUser });
+        } else {
+            res.status(404).json({ error: "User not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+// Products Routes
+app.get("/api/products/random", async (req, res) => {
+    try {
+        const products = await readJSONFile(PRODUCTS_PATH);
+        const randomProduct = products[Math.floor(Math.random() * products.length)];
+        res.json(randomProduct);
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.get("/api/products/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const products = await readJSONFile(PRODUCTS_PATH);
+        const product = products.find(product => product.id === id);
+        
+        if (product) {
+            res.json(product);
+        } else {
+            res.status(404).json({ error: "Product not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.post("/api/products", async (req, res) => {
+    try {
+        const products = await readJSONFile(PRODUCTS_PATH);
+        const newProduct = {
+            id: products.length > 0 ? Math.max(...products.map(product => product.id)) + 1 : 1,
+            ...req.body
+        };
+        products.push(newProduct);
+        await writeJSONFile(PRODUCTS_PATH, products);
+        res.status(201).json({ message: "New product added", product: newProduct });
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.patch("/api/products/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const products = await readJSONFile(PRODUCTS_PATH);
+        const productIndex = products.findIndex(product => product.id === id);
+        
+        if (productIndex !== -1) {
+            products[productIndex] = { ...products[productIndex], ...req.body, id };
+            await writeJSONFile(PRODUCTS_PATH, products);
+            res.json({ message: "Product updated", product: products[productIndex] });
+        } else {
+            res.status(404).json({ error: "Product not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+app.delete("/api/products/:id", async (req, res) => {
+    try {
+        const id = +req.params.id;
+        const products = await readJSONFile(PRODUCTS_PATH);
+        const productIndex = products.findIndex(product => product.id === id);
+        
+        if (productIndex !== -1) {
+            const deletedProduct = products.splice(productIndex, 1)[0];
+            await writeJSONFile(PRODUCTS_PATH, products);
+            res.json({ message: "Product deleted", product: deletedProduct });
+        } else {
+            res.status(404).json({ error: "Product not found" });
+        }
+    } catch (error) {
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-  });
+});
