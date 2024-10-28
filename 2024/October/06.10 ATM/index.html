@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="alert(`insert card`)">
+    <form id="atmForm">
+        <header class="header">WELCOME TO IITC ATM</header>
+
+         
+        <input type="text" id="pinInput" placeholder="Enter your PIN" required> 
+        <button type="submit">Enter</button> 
+        <ul id="atmOptions" style="display: none;">
+            <li class="btn" id="depositBtn">Deposit</li>
+            <li class="btn" id="withdrawBtn">Withdraw</li>
+            <li class="btn" id="balanceBtn">Balance</li>
+            <li class="btn" id="lastTransactionBtn">Last Transaction</li>
+        </ul>
+    </form>
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
