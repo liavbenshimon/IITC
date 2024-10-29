@@ -2,7 +2,13 @@
   {
     "id": 2,
     "setup": "Why did the scarecrow win an award?",
-    "punchline": "Because he was outstanding in his field!"
+    "punchline": "Because he was outstanding in his field!",
+    "message": "this is new",
+    "joke": {
+      "id": 2,
+      "setup": "Why did the scarecrow win an award?",
+      "punchline": "Because he was outstanding in his field!"
+    }
   },
   {
     "id": 3,
