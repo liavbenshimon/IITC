@@ -1,84 +1,85 @@
-import usersModel from "..models/usersModel.js"
+import usersModel from '../models/usersModel.js';
 
-export const getAllusers = router.get('/', async (req, res) => {
-    try {
-      const users = await usersModel.find();
-      res.json(users);
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  });
-  
-  export const getUsersByID = router.get('/:id', getUser, (req, res) => {
-    res.json(res.user);
-  });
-  
-  async function getUser(req, res, next) {
-    let user;
-    try {
-      user = await usersModel.findById(req.params.id);
-      if (user == null) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-    } catch (error) {
-      return res.status(500).json({ message: error.message });
-    }
-    res.user = user;
-    next();
+// Logic to get all users
+async function getAllUsers(req, res) {
+  try {
+    const users = await usersModel.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
+}
 
-export const createNewUser = router.post('/', async (req, res) => {
-    const user = new usersModel({
-      setup: req.body.setup,
-      punchline: req.body.punchline,
-    });
-    try {
-      const newUser = await usersModel.save();
-      res.status(201).json(newUser);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
+// Logic to get a user by ID
+async function getUsersByID(req, res) {
+  res.json(res.user);
+}
+
+// Middleware to find a user by ID
+async function getUser(req, res, next) {
+  let user;
+  try {
+    user = await usersModel.findById(req.params.id);
+    if (user == null) {
+      return res.status(404).json({ message: 'User not found' });
     }
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+  res.user = user;
+  next();
+}
+
+// Logic to create a new user
+async function createNewUser(req, res) {
+  const user = new usersModel({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
   });
+  try {
+    const newUser = await user.save();
+    res.status(201).json(newUser);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
 
-  router.post('/', async (req, res) => {
-    const user = new usersModel({
-      setup: req.body.setup,
-      punchline: req.body.punchline,
-    });
-    try {
-      const newUser = await user.save();
-      res.status(201).json(newUser);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
-  });
+// Logic to update a user
+async function updateAUser(req, res) {
+  if (req.body.name != null) {
+    res.user.name = req.body.name;
+  }
+  if (req.body.email != null) {
+    res.user.email = req.body.email;
+  }
+  if (req.body.password != null) {
+    res.user.password = req.body.password;
+  }
+  try {
+    const updatedUser = await res.user.save();
+    res.json(updatedUser);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+}
 
-export const updateAUser = router.put('/:id', getUser, async (req, res) => {
-    if (req.body.setup != null) {
-      res.user.setup = req.body.setup;
-    }
-    if (req.body.punchline != null) {
-      res.user.punchline = req.body.punchline;
-    }
-    try {
-      const updatedUser = await res.usersModel.save();
-      res.json(updatedUser);
-    } catch (error) {
-      res.status(400).json({ message: error.message });
-    }
-  });
+// Logic to delete a user
+async function deleteUser(req, res) {
+  try {
+    await res.user.remove();
+    res.json({ message: 'Deleted User' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
 
-  export const deleteUser = router.delete('/:id', getUser, async (req, res) => {
-    try {
-      await res.usersModel.remove();
-      res.json({ message: 'Deleted User' });
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-  });
-  
-  
-
-  
-  
-  
+// Exporting the functions and middleware
+export {
+  getAllUsers,
+  getUsersByID,
+  getUser,
+  createNewUser,
+  updateAUser,
+  deleteUser
+};
