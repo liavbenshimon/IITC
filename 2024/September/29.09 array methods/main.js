@@ -37,6 +37,17 @@
 
 
 
+// function capitalizeWords(string) {
+//     return string.split(' ').map(word =>
+//       word.charAt(0).toUpperCase() + word.slice(1)
+//     ).join(' ')
+//   }
+  
+//   const sentence = 'hello world'
+//   console.log(capitalizeWords(sentence)); 
+
+
+
 
 //HW
 
@@ -125,7 +136,7 @@
 // 13
 
 // const numbers = [1,2,3,4,5,6,7,8];
-// const even = numbers.filter(str => str > 5);
+// const even = numbers.filter(str => str % 2 === 0);
 // console.log(even);
 
 // 14
