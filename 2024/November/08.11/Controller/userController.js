@@ -1,5 +1,19 @@
 import User from "../Model/userModel.js";
 
+export const findUsersByName = async (req, res) => {
+  const { name } = req.query; // קבלת פרמטר השם מהשאילתה
+  
+  try {
+    const users = await User.find({ name: name });
+    if (users.length === 0) {
+      return res.status(404).json({ message: "No users found with that name" });
+    }
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 export const createUser = async (req, res) => {
   const users = req.body;
 

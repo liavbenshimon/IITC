@@ -2,6 +2,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes.js";
+import requestLogger from "./middleware/logger.js";
 
 const URI = "mongodb+srv://liav2:43tC9kwEj9fIbe2z@cluster0.k19ik.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
