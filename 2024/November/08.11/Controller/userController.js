@@ -1,21 +1,24 @@
-// controllers/userController.js
-import User from "../models/userModel.js";
+import User from "../Model/userModel.js";
 
-// Create - יצירת משתמש חדש
 export const createUser = async (req, res) => {
-  const { name, email, age } = req.body;
-
-  const user = new User({ name, email, age });
+  const users = req.body;
 
   try {
-    await user.save();
-    res.status(201).json(user);
+    if (Array.isArray(users)) {
+
+      const createdUsers = await User.insertMany(users);
+      res.status(201).json(createdUsers);
+    } else {
+
+      const user = new User(users);
+      await user.save();
+      res.status(201).json(user);
+    }
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 
-// Read - קריאה לכל המשתמשים
 export const getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -25,7 +28,6 @@ export const getUsers = async (req, res) => {
   }
 };
 
-// Read - קריאה למשתמש לפי ID
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -38,7 +40,6 @@ export const getUserById = async (req, res) => {
   }
 };
 
-// Update - עדכון פרטי משתמש
 export const updateUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -51,7 +52,6 @@ export const updateUser = async (req, res) => {
   }
 };
 
-// Delete - מחיקת משתמש
 export const deleteUser = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
