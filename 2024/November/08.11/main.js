@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(requestLogger);
 
 // Connect to MongoDB
 mongoose.connect(URI, {

@@ -4,11 +4,10 @@ export const findUsersByName = async (req, res) => {
   const { name } = req.query; // קבלת פרמטר השם מהשאילתה
   
   try {
-    const users = await User.find({ name: name });
+    const users = await User.find({ name: new RegExp(name, "i") }); // חיפוש רגיש לאותיות גדולות וקטנות
     if (users.length === 0) {
-      return res.status(404).json({ message: "No users found with that name" });
-    }
-    res.json(users);
+      return res.status(404).json({ message: "No users found with the given name" });
+    }    res.json(users);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
