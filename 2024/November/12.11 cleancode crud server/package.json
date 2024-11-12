@@ -1,5 +1,5 @@
 {
-  "name": "basenodeapp",
+  "name": "12.11-cleancode-crud-server",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
