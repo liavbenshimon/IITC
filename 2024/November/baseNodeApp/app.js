@@ -9,15 +9,15 @@ const router = express.Router();
 const PORT = 3000;
 const dbURI = process.env.DB_URI
 
-router.use('/users', userRoute);
 const app = express();
+app.use(express.json());
+router.use('/users', userRoute);
 
 mongoose.connect(dbURI).then(() => {
     console.log("DB connected");
 })
 
 app.use('/users', userRoute);
-app.use(express.json());
 
 app.get("/", (req,res) => {
     res.send ("hello world")
