@@ -8,6 +8,7 @@ const dbURI = process.env.DB_URI
 
 // Routes Import
 const userRoute = require('./Route/userRoute.js')
+const booksRoutes = require('./Route/booksRoutes.js')
 
 mongoose.connect(dbURI).then(() => {
     console.log("DB connected");
@@ -22,6 +23,7 @@ app.get("/", (req,res) => {
 });
 
 app.use('/api/users', userRoute);
+app.use('/api/books', booksRoutes);
 
 app.listen(PORT ,() => {
 console.log(`The server is running on ${PORT}`);
