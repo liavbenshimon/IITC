@@ -4,7 +4,11 @@ import "./Prep.css"
 const PrepTime = () => {
     return (
         <div>
-            Prep Time Comp
+              Preparation time
+
+              Total: Approximately 10 minutes
+              Preparation: 5 minutes
+              Cooking: 5 minutes
         </div>
     )
 }

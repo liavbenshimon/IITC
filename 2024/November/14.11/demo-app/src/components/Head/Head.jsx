@@ -8,9 +8,9 @@ import PrepTime from "../PrepTime/Prep.jsx"
 const Head = () => {
     return (
     <div className="head">
-            This is the Head
-            <Intro/>
-            <PrepTime/>
+         Simple Omelette Recipe
+        <Intro/>
+        <PrepTime/>
         </div>
     )
 }
